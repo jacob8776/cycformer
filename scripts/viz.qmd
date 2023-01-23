@@ -1,0 +1,49 @@
+---
+title: "mcycdb_viz"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+setwd("~/Desktop/jacob/mcycdb/MCycDB/")
+
+metadata <- read_table("id2genemap.txt", col_names = F) 
+
+colnames(metadata) <- c("id", "gene", "database")
+
+#unique(metadata$gene)
+
+ggplot(data = metadata, aes(x = gene)) + geom_bar()
+
+
+
+```
+
+```{r}
+
+
+```
