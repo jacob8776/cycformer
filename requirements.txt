@@ -1,0 +1,6 @@
+transformers
+accelerate
+evaluate
+datasets
+wandb
+protobuf==3.20.0
