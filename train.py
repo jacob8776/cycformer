@@ -9,7 +9,6 @@ from transformers import (
     TrainingArguments,
     EsmTokenizer,
     EsmForSequenceClassification, 
-    DataCollatorWithPadding
 )
 from utils.datasets import ProteinDataset
 
@@ -99,13 +98,11 @@ def main():
                                 eval_accumulation_steps=100,
                             )
 
-    data_collator = DataCollatorWithPadding(tokenizer)
     trainer = Trainer(model,
                       tr_args,
                       train_dataset=train_proteins,
                       eval_dataset=val_proteins,
-                      #tokenizer=tokenizer,
-                      data_collator=data_collator,
+                      tokenizer=tokenizer,
                       compute_metrics=compute_metrics,
                     )
 
