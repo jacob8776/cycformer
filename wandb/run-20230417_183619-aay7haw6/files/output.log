@@ -1,0 +1,126 @@
+[34m[1mwandb[39m[22m: Downloading large artifact protein-sequences:v0, 83.71MB. 3 files...
+[34m[1mwandb[39m[22m:   3 of 3 files downloaded.
+Done. 0:0:0.1
+  0%|                                                                                      | 0/100 [00:00<?, ?it/s]
+loading file:  artifacts/protein-sequences:v0/train_seqs
+done.
+loading file:  artifacts/protein-sequences:v0/val_seqs
+done.
+File type:  fasta
+done.
+# of TRAIN SEQ:   203050
+# of VAL SEQ:     100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████▏| 99/100 [15:00<00:06,  6.60s/it]
+                                             sequence                                              ANNOT  variance
+0   MDMKIKIFEGITRNVFILGLVSLFTDLSSQMVFPLIPLFMVTVLGS...  [transporters, cenmetpat, cenmetpat, transport...  120.4224
+1   MHETIRCDIFSAETTDRAASLLLWASSATTVLILLSIIGTIVYRGI...  [transporters, transporters, transporters, tra...    3.0784
+2   MKIRVVSSREEIPNLNQDETVIHLAFRPSNTDIFTLVQTCPKVEVI...  [serine, serine, odegsyn, aom, serine, serine,...  117.0084
+3   MIRQFQPKFVITNRIASGLTMIERARGFLEAAELSEEWIRSMGDRA...  [purine, purine, odegsyn, purine, purine, puri...    8.2836
+4   MFLLKAMLQYIAFNNATEIISDQDLKFSPLNFAYTQAWMTINDVDA...  [purine, purine, purine, purine, purine, org_s...   33.8500
+..                                                ...                                                ...       ...
+95  MNTRTIIEGTTKVLVPIPPEGVSFPPSAAPVFYNPEMELNRDINVA...  [assnitred, assnitred, assnitred, assnitred, a...    0.9184
+96  MVCCSEHLLSVMVVSCIFAPWVHHGPLDLQAIRDVDAGTCTANEAF...  [dissnitred, dissnitred, dissnitred, dissnitre...    0.0196
+97  MISGGTVSGSNTLFGNQRLDPYNTHNFIVEIEGIIIGGFSEVSGLN...  [purine, org_sul_trans, org_sul_trans, serine,...   24.9456
+98  MFNYVLKRILQLIPALLIVSVASFSIIYFAPGDPAETICTGPDGNT...  [asssulred, cenmetpat, cenmetpat, asssulred, c...   38.9200
+99  MKDKTVWIKADEGNWDKRKGRITTGLESGVECVLVNADDVERVREL...  [purine, pentose, serine, pentose, odegsyn, pu...   29.2896
+
+100%|████████████████████████████████████████████████████████████████████████████| 100/100 [15:10<00:00,  9.10s/it]

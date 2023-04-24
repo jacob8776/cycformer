@@ -1,0 +1,68 @@
+[34m[1mwandb[39m[22m: Downloading large artifact protein-sequences:v0, 83.71MB. 3 files...
+[34m[1mwandb[39m[22m:   3 of 3 files downloaded.
+Done. 0:0:0.1
+  0%|                                                   | 0/100 [00:00<?, ?it/s]
+loading file:  artifacts/protein-sequences:v0/train_seqs
+done.
+loading file:  artifacts/protein-sequences:v0/val_seqs
+done.
+File type:  fasta
+done.
+# of TRAIN SEQ:   203050
+# of VAL SEQ:     100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 15%|██████▎                                   | 15/100 [01:13<06:53,  4.87s/it]
+Traceback (most recent call last):
+  File "/Users/wynne/Desktop/jacob/cycformer_git/cycformer/train.py", line 298, in <module>
+    main()
+  File "/Users/wynne/Desktop/jacob/cycformer_git/cycformer/train.py", line 133, in main
+    monte_carlo_dropout(model, val_proteins, filename='cycle_annotations', rounds=50)
+  File "/Users/wynne/Desktop/jacob/cycformer_git/cycformer/train.py", line 274, in monte_carlo_dropout
+    preds = torch.stack([torch.argmax(model(sample['input_ids'].squeeze(0)).logits, dim=-1)
+  File "/Users/wynne/Desktop/jacob/cycformer_git/cycformer/train.py", line 274, in <listcomp>
+    preds = torch.stack([torch.argmax(model(sample['input_ids'].squeeze(0)).logits, dim=-1)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/models/esm/modeling_esm.py", line 1121, in forward
+    outputs = self.esm(
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/models/esm/modeling_esm.py", line 922, in forward
+    encoder_outputs = self.encoder(
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/models/esm/modeling_esm.py", line 622, in forward
+    layer_outputs = layer_module(
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/models/esm/modeling_esm.py", line 507, in forward
+    self_attention_outputs = self.attention(
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/models/esm/modeling_esm.py", line 441, in forward
+    self_outputs = self.self(
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/models/esm/modeling_esm.py", line 372, in forward
+    attention_probs = self.dropout(attention_probs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/torch/nn/modules/dropout.py", line 59, in forward
+    return F.dropout(input, self.p, self.training, self.inplace)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/torch/nn/functional.py", line 1252, in dropout
+    return _VF.dropout_(input, p, training) if inplace else _VF.dropout(input, p, training)
+KeyboardInterrupt

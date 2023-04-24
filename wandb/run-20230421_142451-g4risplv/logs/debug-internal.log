@@ -1,0 +1,181 @@
+2023-04-21 14:24:51,096 INFO    StreamThr :11161 [internal.py:wandb_internal():86] W&B internal server running at pid: 11161, started at: 2023-04-21 14:24:51.096100
+2023-04-21 14:24:51,097 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: status
+2023-04-21 14:24:51,099 INFO    WriterThread:11161 [datastore.py:open_for_write():85] open: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/run-g4risplv.wandb
+2023-04-21 14:24:51,099 DEBUG   SenderThread:11161 [sender.py:send():375] send: header
+2023-04-21 14:24:51,123 DEBUG   SenderThread:11161 [sender.py:send():375] send: run
+2023-04-21 14:24:51,363 INFO    SenderThread:11161 [dir_watcher.py:__init__():219] watching files in: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files
+2023-04-21 14:24:51,363 INFO    SenderThread:11161 [sender.py:_start_run_threads():1124] run started: g4risplv with start time 1682112291.095971
+2023-04-21 14:24:51,364 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: summary_record
+2023-04-21 14:24:51,364 INFO    SenderThread:11161 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-21 14:24:51,370 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: check_version
+2023-04-21 14:24:51,371 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: check_version
+2023-04-21 14:24:51,437 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: run_start
+2023-04-21 14:24:51,444 DEBUG   HandlerThread:11161 [system_info.py:__init__():31] System info init
+2023-04-21 14:24:51,444 DEBUG   HandlerThread:11161 [system_info.py:__init__():46] System info init done
+2023-04-21 14:24:51,444 INFO    HandlerThread:11161 [system_monitor.py:start():181] Starting system monitor
+2023-04-21 14:24:51,445 INFO    SystemMonitor:11161 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-21 14:24:51,445 INFO    HandlerThread:11161 [system_monitor.py:probe():201] Collecting system info
+2023-04-21 14:24:51,446 DEBUG   HandlerThread:11161 [system_info.py:probe():195] Probing system
+2023-04-21 14:24:51,446 INFO    SystemMonitor:11161 [interfaces.py:start():190] Started cpu monitoring
+2023-04-21 14:24:51,446 INFO    SystemMonitor:11161 [interfaces.py:start():190] Started disk monitoring
+2023-04-21 14:24:51,447 INFO    SystemMonitor:11161 [interfaces.py:start():190] Started memory monitoring
+2023-04-21 14:24:51,447 INFO    SystemMonitor:11161 [interfaces.py:start():190] Started network monitoring
+2023-04-21 14:24:51,453 DEBUG   HandlerThread:11161 [system_info.py:_probe_git():180] Probing git
+2023-04-21 14:24:51,485 DEBUG   HandlerThread:11161 [system_info.py:_probe_git():188] Probing git done
+2023-04-21 14:24:51,485 DEBUG   HandlerThread:11161 [system_info.py:probe():240] Probing system done
+2023-04-21 14:24:51,485 DEBUG   HandlerThread:11161 [system_monitor.py:probe():210] {'os': 'macOS-10.16-x86_64-i386-64bit', 'python': '3.10.10', 'heartbeatAt': '2023-04-21T21:24:51.446115', 'startedAt': '2023-04-21T21:24:51.086272', 'docker': None, 'cuda': None, 'args': ('--fasta_file=out.fasta', '--eval', '--model_save_dir=cycformer', '--run=cycformer', '--project=protein-cycle-pred', '--artifact=cycle-pred/protein-cycle-pred/protein-sequences:v0', '--trainseqs=train_seqs', '--valseqs=val_seqs', '--model=cycformer/checkpoint-76146', '--tokenizer=facebook/esm2_t6_8M_UR50D', '--label=CYCLE', '--inputs=SEQS'), 'state': 'running', 'program': '/Users/wynne/Desktop/jacob/cycformer_git/cycformer/train.py', 'codePath': 'train.py', 'git': {'remote': 'https://github.com/jacob8776/cycformer', 'commit': '5c03306bd2630d888d80428cf664a89a74434d4f'}, 'email': 'jacob.wynne.776@gmail.com', 'root': '/Users/wynne/Desktop/jacob/cycformer_git/cycformer', 'host': '10-248-44-110.wireless.oregonstate.edu', 'username': 'wynne', 'executable': '/Users/wynne/opt/anaconda3/envs/cycformer/bin/python', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 2400, 'min': 2400, 'max': 2400}, 'cpu_freq_per_core': [{'current': 2400, 'min': 2400, 'max': 2400}], 'disk': {'total': 3727.0669898986816, 'used': 21.765945434570312}, 'memory': {'total': 64.0}}
+2023-04-21 14:24:51,485 INFO    HandlerThread:11161 [system_monitor.py:probe():211] Finished collecting system info
+2023-04-21 14:24:51,485 INFO    HandlerThread:11161 [system_monitor.py:probe():214] Publishing system info
+2023-04-21 14:24:51,485 DEBUG   HandlerThread:11161 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-04-21 14:24:51,486 DEBUG   HandlerThread:11161 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-21 14:24:51,486 DEBUG   HandlerThread:11161 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-04-21 14:24:52,366 INFO    Thread-12 :11161 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/conda-environment.yaml
+2023-04-21 14:24:52,367 INFO    Thread-12 :11161 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/requirements.txt
+2023-04-21 14:24:52,367 INFO    Thread-12 :11161 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/wandb-summary.json
+2023-04-21 14:24:54,789 DEBUG   HandlerThread:11161 [system_info.py:_save_conda():86] Saving conda packages done
+2023-04-21 14:24:54,790 INFO    HandlerThread:11161 [system_monitor.py:probe():216] Finished publishing system info
+2023-04-21 14:24:54,792 DEBUG   SenderThread:11161 [sender.py:send():375] send: files
+2023-04-21 14:24:54,793 INFO    SenderThread:11161 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-04-21 14:24:54,800 DEBUG   SenderThread:11161 [sender.py:send():375] send: telemetry
+2023-04-21 14:24:54,801 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-21 14:24:54,801 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: stop_status
+2023-04-21 14:24:55,176 INFO    wandb-upload_0:11161 [upload_job.py:push():137] Uploaded file /var/folders/2l/crnlqh8n15n8jrvnvrk7d_7m0000gn/T/tmpw4zn7t3dwandb/j3wwmaiz-wandb-metadata.json
+2023-04-21 14:24:55,187 DEBUG   SenderThread:11161 [sender.py:send():375] send: use_artifact
+2023-04-21 14:24:55,375 INFO    Thread-12 :11161 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/conda-environment.yaml
+2023-04-21 14:24:55,376 INFO    Thread-12 :11161 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/wandb-metadata.json
+2023-04-21 14:24:56,242 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: status_report
+2023-04-21 14:24:56,381 INFO    Thread-12 :11161 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/output.log
+2023-04-21 14:24:56,408 DEBUG   SenderThread:11161 [sender.py:send():375] send: exit
+2023-04-21 14:24:56,408 INFO    SenderThread:11161 [sender.py:send_exit():598] handling exit code: 1
+2023-04-21 14:24:56,408 INFO    SenderThread:11161 [sender.py:send_exit():600] handling runtime: 4
+2023-04-21 14:24:56,409 INFO    SenderThread:11161 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-21 14:24:56,409 INFO    SenderThread:11161 [sender.py:send_exit():606] send defer
+2023-04-21 14:24:56,409 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:56,409 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 0
+2023-04-21 14:24:56,410 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:56,410 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-04-21 14:24:56,410 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 1
+2023-04-21 14:24:56,410 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:56,410 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 1
+2023-04-21 14:24:56,410 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:56,410 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-04-21 14:24:56,410 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 2
+2023-04-21 14:24:56,411 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:56,411 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 2
+2023-04-21 14:24:56,411 INFO    HandlerThread:11161 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-21 14:24:56,411 INFO    HandlerThread:11161 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-21 14:24:56,411 DEBUG   SystemMonitor:11161 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-21 14:24:56,411 INFO    HandlerThread:11161 [interfaces.py:finish():202] Joined disk monitor
+2023-04-21 14:24:56,411 DEBUG   SystemMonitor:11161 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-21 14:24:56,411 DEBUG   SystemMonitor:11161 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-21 14:24:56,411 INFO    HandlerThread:11161 [interfaces.py:finish():202] Joined memory monitor
+2023-04-21 14:24:56,412 INFO    HandlerThread:11161 [interfaces.py:finish():202] Joined network monitor
+2023-04-21 14:24:56,412 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:56,412 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-04-21 14:24:56,412 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 3
+2023-04-21 14:24:56,412 DEBUG   SenderThread:11161 [sender.py:send():375] send: stats
+2023-04-21 14:24:56,412 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:56,413 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 3
+2023-04-21 14:24:56,413 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:56,413 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-04-21 14:24:56,413 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 4
+2023-04-21 14:24:56,413 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:56,413 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 4
+2023-04-21 14:24:56,413 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:56,413 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-04-21 14:24:56,413 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 5
+2023-04-21 14:24:56,413 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:56,413 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 5
+2023-04-21 14:24:56,414 DEBUG   SenderThread:11161 [sender.py:send():375] send: summary
+2023-04-21 14:24:56,414 INFO    SenderThread:11161 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-21 14:24:56,414 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:56,414 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-04-21 14:24:56,414 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 6
+2023-04-21 14:24:56,414 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:56,414 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 6
+2023-04-21 14:24:56,414 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:56,414 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-04-21 14:24:56,417 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: status_report
+2023-04-21 14:24:56,542 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 7
+2023-04-21 14:24:56,542 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:56,542 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 7
+2023-04-21 14:24:56,542 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:56,542 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-04-21 14:24:57,385 INFO    Thread-12 :11161 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/wandb-summary.json
+2023-04-21 14:24:57,386 INFO    Thread-12 :11161 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/config.yaml
+2023-04-21 14:24:57,410 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-21 14:24:57,648 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 8
+2023-04-21 14:24:57,649 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: poll_exit
+2023-04-21 14:24:57,649 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:57,649 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 8
+2023-04-21 14:24:57,649 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:57,649 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-04-21 14:24:57,654 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 9
+2023-04-21 14:24:57,655 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:57,655 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 9
+2023-04-21 14:24:57,655 DEBUG   SenderThread:11161 [sender.py:send():375] send: artifact
+2023-04-21 14:24:58,115 INFO    SenderThread:11161 [sender.py:send_artifact():1474] sent artifact job-https___github.com_jacob8776_cycformer_train.py - {'id': 'QXJ0aWZhY3Q6NDI3MDEzODEx', 'digest': '291463f77745572b1caac16b04f40684', 'state': 'COMMITTED', 'aliases': [{'artifactCollectionName': 'job-https___github.com_jacob8776_cycformer_train.py', 'alias': 'latest'}, {'artifactCollectionName': 'job-https___github.com_jacob8776_cycformer_train.py', 'alias': 'v1'}], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjYyOTI1NDkz', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NDI3MDEzODEx', 'versionIndex': 1}}, 'version': 'v1'}
+2023-04-21 14:24:58,115 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:58,115 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-04-21 14:24:58,115 INFO    SenderThread:11161 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-04-21 14:24:58,386 INFO    Thread-12 :11161 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/output.log
+2023-04-21 14:24:58,386 INFO    SenderThread:11161 [dir_watcher.py:finish():395] scan: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files
+2023-04-21 14:24:58,387 INFO    SenderThread:11161 [dir_watcher.py:finish():409] scan save: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/requirements.txt requirements.txt
+2023-04-21 14:24:58,387 INFO    SenderThread:11161 [dir_watcher.py:finish():409] scan save: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/output.log output.log
+2023-04-21 14:24:58,387 INFO    SenderThread:11161 [dir_watcher.py:finish():409] scan save: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/config.yaml config.yaml
+2023-04-21 14:24:58,387 INFO    SenderThread:11161 [dir_watcher.py:finish():409] scan save: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/wandb-summary.json wandb-summary.json
+2023-04-21 14:24:58,387 INFO    SenderThread:11161 [dir_watcher.py:finish():409] scan save: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/conda-environment.yaml conda-environment.yaml
+2023-04-21 14:24:58,387 INFO    SenderThread:11161 [dir_watcher.py:finish():409] scan save: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/wandb-metadata.json wandb-metadata.json
+2023-04-21 14:24:58,387 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 10
+2023-04-21 14:24:58,387 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:58,390 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 10
+2023-04-21 14:24:58,393 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:58,395 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-04-21 14:24:58,395 INFO    SenderThread:11161 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-21 14:24:58,415 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-21 14:24:58,415 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: poll_exit
+2023-04-21 14:24:58,771 INFO    wandb-upload_1:11161 [upload_job.py:push():137] Uploaded file /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/requirements.txt
+2023-04-21 14:24:58,772 INFO    wandb-upload_0:11161 [upload_job.py:push():137] Uploaded file /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/output.log
+2023-04-21 14:24:58,794 INFO    wandb-upload_2:11161 [upload_job.py:push():137] Uploaded file /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/config.yaml
+2023-04-21 14:24:58,817 INFO    wandb-upload_4:11161 [upload_job.py:push():137] Uploaded file /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/conda-environment.yaml
+2023-04-21 14:24:58,827 INFO    wandb-upload_3:11161 [upload_job.py:push():137] Uploaded file /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/files/wandb-summary.json
+2023-04-21 14:24:59,031 INFO    Thread-11 (_thread_body):11161 [sender.py:transition_state():626] send defer: 11
+2023-04-21 14:24:59,031 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:59,031 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 11
+2023-04-21 14:24:59,032 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:59,032 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-04-21 14:24:59,032 INFO    SenderThread:11161 [file_pusher.py:join():173] waiting for file pusher
+2023-04-21 14:24:59,032 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 12
+2023-04-21 14:24:59,033 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:59,033 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 12
+2023-04-21 14:24:59,033 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:59,033 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-04-21 14:24:59,124 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 13
+2023-04-21 14:24:59,124 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:59,124 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 13
+2023-04-21 14:24:59,125 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:59,125 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-04-21 14:24:59,125 INFO    SenderThread:11161 [sender.py:transition_state():626] send defer: 14
+2023-04-21 14:24:59,125 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: defer
+2023-04-21 14:24:59,125 INFO    HandlerThread:11161 [handler.py:handle_request_defer():170] handle defer: 14
+2023-04-21 14:24:59,126 DEBUG   SenderThread:11161 [sender.py:send():375] send: final
+2023-04-21 14:24:59,126 DEBUG   SenderThread:11161 [sender.py:send():375] send: footer
+2023-04-21 14:24:59,126 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: defer
+2023-04-21 14:24:59,126 INFO    SenderThread:11161 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-04-21 14:24:59,127 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-21 14:24:59,127 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: poll_exit
+2023-04-21 14:24:59,128 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-21 14:24:59,128 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: poll_exit
+2023-04-21 14:24:59,128 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: server_info
+2023-04-21 14:24:59,129 DEBUG   SenderThread:11161 [sender.py:send_request():402] send_request: server_info
+2023-04-21 14:24:59,130 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: get_summary
+2023-04-21 14:24:59,131 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: sampled_history
+2023-04-21 14:24:59,211 INFO    MainThread:11161 [wandb_run.py:_footer_history_summary_info():3476] rendering history
+2023-04-21 14:24:59,212 INFO    MainThread:11161 [wandb_run.py:_footer_history_summary_info():3508] rendering summary
+2023-04-21 14:24:59,212 INFO    MainThread:11161 [wandb_run.py:_footer_sync_info():3434] logging synced files
+2023-04-21 14:24:59,212 DEBUG   HandlerThread:11161 [handler.py:handle_request():144] handle_request: shutdown
+2023-04-21 14:24:59,212 INFO    HandlerThread:11161 [handler.py:finish():845] shutting down handler
+2023-04-21 14:25:00,134 INFO    WriterThread:11161 [datastore.py:close():298] close: /Users/wynne/Desktop/jacob/cycformer_git/cycformer/wandb/run-20230421_142451-g4risplv/run-g4risplv.wandb
+2023-04-21 14:25:00,212 INFO    SenderThread:11161 [sender.py:finish():1550] shutting down sender
+2023-04-21 14:25:00,212 INFO    SenderThread:11161 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-21 14:25:00,212 INFO    SenderThread:11161 [file_pusher.py:join():173] waiting for file pusher
