@@ -80,16 +80,12 @@ class ProteinDataset(Dataset):
 
     def __getitem__(self, idx):
         sample = self.tokenizer(self.seqs[idx], 
-                                return_tensors='pt', 
                                 padding=True,
                                 truncation=True,
                                 )
-        #sample['input_ids'] = sample['input_ids'].squeeze(0)
-        #sample['attention_mask'] = sample['attention_mask'].squeeze(0)
-        #print(sample)
         if hasattr(self, 'labels'):
             sample['label'] = self.label_dict[self.labels[idx]]
         if self.return_seqs:
             sample['sequence'] = self.seqs[idx]
-        #print(sample)
+        print(sample)
         return sample
