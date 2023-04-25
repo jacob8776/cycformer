@@ -1,9 +1,6 @@
 
 from Bio import SeqIO
-from torch.utils.data import (
-    Dataset,
-    DataLoader,
-)
+from torch.utils.data import Dataset
 from pandas import read_csv, DataFrame
 from numpy import unique
 from pickle import dump, HIGHEST_PROTOCOL
@@ -47,7 +44,7 @@ class ProteinDataset(Dataset):
         self.seqs = data[seq_column]
 
     """
-    This should work for a correctly formatted fasta file!
+    This should work for a correctly formatted fasta/fastq file!
     """
     @classmethod
     def from_fastx(cls, fasta_filename, tokenizer, seq_column='SEQS', label_column=None, nsamples=-1, mapper=None):
@@ -79,7 +76,8 @@ class ProteinDataset(Dataset):
         return len(self.seqs)
 
     def __getitem__(self, idx):
-        sample = self.tokenizer(self.seqs[idx], 
+        sample = self.tokenizer(self.seqs[idx],
+                                return_tensors='pt', 
                                 padding=True,
                                 truncation=True,
                                 )
@@ -87,5 +85,5 @@ class ProteinDataset(Dataset):
             sample['label'] = self.label_dict[self.labels[idx]]
         if self.return_seqs:
             sample['sequence'] = self.seqs[idx]
-        print(sample)
+        #print(sample)
         return sample

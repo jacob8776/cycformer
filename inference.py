@@ -33,7 +33,7 @@ def main():
                                              mapper=mapper,
                                              )
     print(val_proteins.id2label)
-    model = EsmForSequenceClassification.from_pretrained('cycformer/checkpoint-76146',
+    model = EsmForSequenceClassification.from_pretrained('nazbijari/cycformer',
                                                           hidden_dropout_prob=0.1,
                                                           attention_probs_dropout_prob=0.1,
                                                         )
