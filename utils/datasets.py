@@ -61,7 +61,7 @@ class ProteinDataset(Dataset):
             df = DataFrame({'IDs': identifiers,'SEQS': seqs})
 
             
-            df = df.sample(n=10).reset_index() # test
+            #df = df.sample(n=10).reset_index() # test
 
             return cls(dataframe=df, 
                     csv_file=None, 
