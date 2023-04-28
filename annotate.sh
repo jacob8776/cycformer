@@ -1,0 +1,1 @@
+python inference.py --fasta_file=DQIP01.1.fasta

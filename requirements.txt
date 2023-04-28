@@ -3,4 +3,5 @@ accelerate
 evaluate
 datasets
 wandb
+biopython
 protobuf==3.20.0
