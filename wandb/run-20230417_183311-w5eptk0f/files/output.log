@@ -1,0 +1,37 @@
+[34m[1mwandb[39m[22m: Downloading large artifact protein-sequences:v0, 83.71MB. 3 files...
+[34m[1mwandb[39m[22m:   3 of 3 files downloaded.
+Done. 0:0:2.9
+Downloading (…)solve/main/vocab.txt: 100%|██████████████████████████████████████| 93.0/93.0 [00:00<00:00, 73.9kB/s]
+loading file:  artifacts/protein-sequences:v0/train_seqs
+done.
+loading file:  artifacts/protein-sequences:v0/val_seqs
+done.
+File type:  fasta
+done.
+Downloading (…)cial_tokens_map.json: 100%|████████████████████████████████████████| 125/125 [00:00<00:00, 96.6kB/s]
+Downloading (…)okenizer_config.json: 100%|██████████████████████████████████████| 95.0/95.0 [00:00<00:00, 76.6kB/s]
+Traceback (most recent call last):
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/configuration_utils.py", line 628, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/utils/hub.py", line 409, in cached_file
+    resolved_file = hf_hub_download(
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 112, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 160, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.utils._validators.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'models/cycformer/checkpoint-76146'. Use `repo_type` argument if needed.
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/Users/wynne/Desktop/jacob/cycformer_git/cycformer/train.py", line 298, in <module>
+    main()
+  File "/Users/wynne/Desktop/jacob/cycformer_git/cycformer/train.py", line 96, in main
+    model = EsmForSequenceClassification.from_pretrained(MODEL,
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/modeling_utils.py", line 2269, in from_pretrained
+    config, model_kwargs = cls.config_class.from_pretrained(
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/configuration_utils.py", line 546, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/configuration_utils.py", line 573, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/Users/wynne/opt/anaconda3/envs/cycformer/lib/python3.10/site-packages/transformers/configuration_utils.py", line 649, in _get_config_dict
+    raise EnvironmentError(
+OSError: Can't load the configuration of 'models/cycformer/checkpoint-76146'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'models/cycformer/checkpoint-76146' is the correct path to a directory containing a config.json file
