@@ -1,12 +1,4 @@
-# TODO
 
-# add logic for running inference on protein sequences here
-
-# need ProteinDataset class
-
-# need to save KO IDs and load them in for inference step
-
-# 
 
 from pickle import load
 from utils.datasets import ProteinDataset
@@ -20,9 +12,13 @@ from torch.utils.data import DataLoader
 from torch import stack, argmax
 from numpy import var
 from pandas import DataFrame
+import torch
+
+DEVICE = "cuda:0" if torch.cuda.is_available() else "cpu"
+
 
 def main():
-    
+    print('DEV: ', DEVICE)
     args = parse_args()
     tokenizer = EsmTokenizer.from_pretrained('facebook/esm2_t6_8M_UR50D')
     with open('ko_model_id_map.pickle', 'rb') as f:
@@ -47,13 +43,16 @@ def monte_carlo_dropout(model, dataset, filename, rounds=50):
     annot = []
     seqs = []
     v = []
-
+    labels = []
+    model = model.to(DEVICE)
     for sample in tqdm(loader):
-        preds = stack([argmax(model(sample['input_ids'].squeeze(0)).logits, dim=-1) 
-                       for _ in range(rounds)]).squeeze(-1).numpy()
+        preds = stack([argmax(model(sample['input_ids'].to(DEVICE).squeeze(0)).logits, dim=-1) 
+                       for _ in range(rounds)]).squeeze(-1).cpu().numpy()
         variance = var(preds)
         preds = [dataset.id2label[idx] 
                  for idx in preds]
+        if 'label' in sample:
+            labels.append(dataset.id2label[sample['label'].numpy()[0]])
         seqs.append(sample['sequence'][0])
         annot.append(preds)
         v.append(variance)
@@ -61,6 +60,8 @@ def monte_carlo_dropout(model, dataset, filename, rounds=50):
     seq_annotations['sequence'] = seqs
     seq_annotations['ANNOT'] = annot
     seq_annotations['variance'] = v
+    if 'label' in sample:
+        seq_annotations['label'] = labels
     df = DataFrame(seq_annotations)
     df.to_csv(filename+'.csv')
     print(df)
