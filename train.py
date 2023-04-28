@@ -119,7 +119,6 @@ def compute_metrics(eval_pred):
     precision = precision_metric.compute(predictions=predictions, references=labels, average='weighted')
     recall = recall_metric.compute(predictions=predictions, references=labels, average='weighted')
     acc = accuracy.compute(predictions=predictions, references=labels)
-    #probs = torch.nn.functional.softmax(torch.Tensor(logits), dim=1)
     mcc = matthews_metric.compute(references=labels, predictions=predictions)    
     f1 = f1_metric.compute(references=labels, predictions=predictions, average='weighted')
     return {"accuracy": acc, "MCC": mcc, "F1": f1, 'precision': precision, 'recall': recall}
