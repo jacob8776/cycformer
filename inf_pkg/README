@@ -1,0 +1,3 @@
+Create new conda environment with python 3.9
+Run 'bash setup.sh'
+Run 'bash annotate.sh' to test on DQIP01.1.fasta file
