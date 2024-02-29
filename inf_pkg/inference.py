@@ -24,10 +24,14 @@ print(torch.cuda.is_available())
 DEVICE = "cuda:0" if torch.cuda.is_available() else "cpu"
 MODEL = 'esm2_8m_base'
 peft_model_id = 'cycformer_lora_80_qk/checkpoint-157636'
+vanilla_model_id = "cycformer_sim80_dropout_meansampled/checkpoint-157624"
 
 torch.manual_seed(42)
 
-def main(annotations="cycformer_annotations", rounds=5, fasta_file=""):
+def main(annotations="cycformer_annotations", 
+         rounds=5, 
+         fasta_file="",
+         ):
     print('DEV: ', DEVICE)
     #args = parse_args()
     tokenizer = EsmTokenizer.from_pretrained('facebook/esm2_t6_8M_UR50D')
@@ -50,19 +54,16 @@ def main(annotations="cycformer_annotations", rounds=5, fasta_file=""):
                                       #nsamples=-1,
                                       #seq_column='sequence',
                                       #label_column='label')
+    MODEL = vanilla_model_id
+    model = EsmForSequenceClassification.from_pretrained(MODEL)
     
-    model = EsmForSequenceClassification.from_pretrained(MODEL,
-                                                        )
-    
-    lora_model = PeftModel.from_pretrained(model, peft_model_id)
-    lora_model.merge_and_unload()
-    model = lora_model
+    #lora_model = PeftModel.from_pretrained(model, peft_model_id)
+    #lora_model.merge_and_unload()
+    #model = lora_model
     model.to(DEVICE)
 
-    # DROPOUT FUNCTIONALITY. DONT TURN ON...YET
     df = monte_carlo_dropout(model, val_proteins, annotations, rounds=rounds)
     print(df)
-    #predict(model, val_proteins, args.annotations)
 
 def predict(model, dataset, save_filename):
     loader = DataLoader(dataset, shuffle=False, batch_size=1)
