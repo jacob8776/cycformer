@@ -1,5 +1,5 @@
 
-
+import fire
 from pickle import load
 from utils.datasets import ProteinDataset
 from argparse import ArgumentParser
@@ -27,29 +27,29 @@ peft_model_id = 'cycformer_lora_80_qk/checkpoint-157636'
 
 torch.manual_seed(42)
 
-def main():
+def main(annotations="cycformer_annotations", rounds=5, fasta_file=""):
     print('DEV: ', DEVICE)
-    args = parse_args()
+    #args = parse_args()
     tokenizer = EsmTokenizer.from_pretrained('facebook/esm2_t6_8M_UR50D')
     with open('ko_model_id_map.pickle', 'rb') as f:
         mapper = load(f)
 
-    dataset = args.proteins
-    print(dataset)
-    if 'fasta_file' in args:
-        val_proteins = ProteinDataset.from_fastx(args.fasta_file, 
+    #dataset = args.proteins
+    #print(dataset)
+    #if 'fasta_file' in args:
+    val_proteins = ProteinDataset.from_fastx(fasta_file, 
                                                 tokenizer=tokenizer, 
                                                 mapper=mapper,
                                                 )
-    else:
-        val_proteins = ProteinDataset(dataframe=None,
-                                      return_seqs=True,
-                                      csv_file=None, 
-                                      tokenizer=tokenizer, 
-                                      mapper=mapper,
-                                      nsamples=-1,
-                                      seq_column='sequence',
-                                      label_column='label')
+    #else:
+    #    val_proteins = ProteinDataset(dataframe=None,
+                                      #return_seqs=True,
+                                      #csv_file=None, 
+                                      #tokenizer=tokenizer, 
+                                      #mapper=mapper,
+                                      #nsamples=-1,
+                                      #seq_column='sequence',
+                                      #label_column='label')
     
     model = EsmForSequenceClassification.from_pretrained(MODEL,
                                                         )
@@ -60,7 +60,7 @@ def main():
     model.to(DEVICE)
 
     # DROPOUT FUNCTIONALITY. DONT TURN ON...YET
-    df = monte_carlo_dropout(model, val_proteins, args.annotations)
+    df = monte_carlo_dropout(model, val_proteins, annotations, rounds=rounds)
     print(df)
     #predict(model, val_proteins, args.annotations)
 
@@ -134,4 +134,4 @@ def parse_args():
     return args
 
 if __name__ == '__main__':
-    main()
+    fire.Fire(main)
