@@ -60,9 +60,9 @@ def main():
     model.to(DEVICE)
 
     # DROPOUT FUNCTIONALITY. DONT TURN ON...YET
-    #monte_carlo_dropout(model, val_proteins, 'protein_annotations')
-
-    predict(model, val_proteins, args.annotations)
+    df = monte_carlo_dropout(model, val_proteins, args.annotations)
+    print(df)
+    #predict(model, val_proteins, args.annotations)
 
 def predict(model, dataset, save_filename):
     loader = DataLoader(dataset, shuffle=False, batch_size=1)
@@ -93,7 +93,7 @@ def predict(model, dataset, save_filename):
     print('done')
     return df
 
-def monte_carlo_dropout(model, dataset, filename, rounds=50):
+def monte_carlo_dropout(model, dataset, filename, rounds=5):
     model.train()
     loader = DataLoader(dataset, shuffle=False, batch_size=1)
     seq_annotations = {}
@@ -103,8 +103,8 @@ def monte_carlo_dropout(model, dataset, filename, rounds=50):
     labels = []
     model = model.to(DEVICE)
     for sample in tqdm(loader):
-        preds = stack([argmax(model(sample['input_ids'].to(DEVICE).squeeze(0)).logits, dim=-1) 
-                       for _ in range(rounds)]).squeeze(-1).cpu().numpy()
+        preds = [argmax(model(sample['input_ids'].to(DEVICE).squeeze(0)).logits, dim=-1).cpu().numpy()[0] 
+                       for _ in range(rounds)] #.cpu().numpy()
         variance = var(preds)
         preds = [dataset.id2label[idx] 
                  for idx in preds]
@@ -121,7 +121,7 @@ def monte_carlo_dropout(model, dataset, filename, rounds=50):
         seq_annotations['label'] = labels
     df = DataFrame(seq_annotations)
     df.to_csv(filename+'.csv')
-    print(df)
+    #print(df)
     return df
 
 def parse_args():
